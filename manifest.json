@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "YT Narrow Cards",
+  "version": "1.0",
+  "description": "Resizes YouTube cards to be narrower.",
+  "permissions": ["scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
