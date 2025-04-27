@@ -13,6 +13,17 @@ function updateItemStyles() {
     gridContents.style.flexWrap = "wrap";
     gridContents.style.justifyContent = "center";
   }
+
+  const shortsGrid = document.querySelectorAll(
+    "#contents-container.ytd-rich-shelf-renderer"
+  );
+
+  if (shortsGrid) {
+    shortsGrid.forEach((grid) => {
+      grid.style.display = "flex";
+      grid.style.justifyContent = "center";
+    });
+  }
 }
 
 window.addEventListener("load", () => {
