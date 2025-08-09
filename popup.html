@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>YT Narrow Cards</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 14px; min-width: 220px; }
+      .row { display: flex; align-items: center; gap: 10px; }
+      .hint { margin-top: 10px; font-size: 12px; opacity: .75; }
+      .toggle { width: 44px; height: 24px; position: relative; }
+      .toggle input { display: none; }
+      .track { width: 44px; height: 24px; border-radius: 999px; background: #bbb; transition: background .2s; }
+      .thumb { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: white; box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: left .2s; }
+      input:checked + .track { background: #4caf50; }
+      input:checked ~ .thumb { left: 22px; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <label class="toggle">
+        <input id="enabled" type="checkbox" />
+        <div class="track"></div>
+        <div class="thumb"></div>
+      </label>
+      <div>
+        <div><strong>Węższe karty na YouTube</strong></div>
+        <div class="hint">Włącz/wyłącz wygląd. Zmiana działa na otwartych kartach YouTube.</div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

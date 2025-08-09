@@ -1,14 +1,33 @@
 {
   "manifest_version": 3,
   "name": "YT Narrow Cards",
-  "version": "1.0",
-  "description": "Resizes YouTube cards to be narrower.",
-  "permissions": ["scripting"],
+  "version": "1.1.0",
+  "description": "Resizes YouTube cards to be narrower, with an on/off toggle. Icon appears only on YouTube.",
+  "permissions": [
+    "declarativeContent",
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "YT Narrow Cards",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon128.png",
+    "48": "icons/icon128.png",
+    "128": "icons/icon128.png"
+  }
 }
